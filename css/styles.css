@@ -47,13 +47,17 @@ h1 {
 .quote-box {
   color:rgba( 227, 80, 191, 0.25 );
   padding: 1rem;
-  min-width: 45vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.buttonQuote {
-  position: flex;
-  text-align: center;
+.quoteButton {
+  font-size: 1.3rem;
   margin-bottom: 1rem;
+  padding: .5rem;
 }
 
 .fa-quote-left {
