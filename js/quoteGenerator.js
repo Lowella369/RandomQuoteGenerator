@@ -10,7 +10,7 @@ const displayQuote = () => {
   quote.innerHTML = data[index].text;
 
   if(!(data[index].author)){
-    autauthor.innerHTMLhor = "- Anonymous -";
+    author.innerHTMLhor = "- Anonymous -";
   } else {
     author.innerHTML = "- " + data[index].author + " -";
   }
