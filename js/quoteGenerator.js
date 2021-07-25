@@ -1,22 +1,32 @@
-let quotes = ["You never know how strong you are, until being strong is your only choice.",
-  "You have power over your mind - not outside events. Realize this, and you will find strength.",
-  "When something bad happens you have three choices. You can either let it define you, let it destroy you, or you can let it strengthen you.",
-  "Strength does not come from physical capacity. It comes from an indomitable will.",
-  "Promise me you'll always remember: You're braver than you believe, and stronger than you seem, and smarter than you think."
-]
 
+var data;
 
-let button = document.getElementById('quoteButton');
+let button = document.getElementById('buttonQuote');
 let quote = document.getElementById('quote');
+let author = document.getElementById('author');
+  
+const displayQuote = () => {
+  let index = Math.floor(Math.random() * data.length);
+  quote.innerHTML = data[index].text;
 
-function quoteSelector(){
-  let randomQuote = Math.floor(Math.random() * quotes.length);
-  return quotes[randomQuote];
+  if(!(data[index].author)){
+    autauthor.innerHTMLhor = "- Anonymous -";
+  } else {
+    author.innerHTML = "- " + data[index].author + " -";
+  }
+  
 }
 
-function showQuote(){
-  quote.innerHTML = quoteSelector();
-
+async function fetchQuotes() {
+  const URL = `https://type.fit/api/quotes`;
+  try {
+    const fetchResult = fetch(URL)
+    const response = await fetchResult;
+    data = await response.json();
+    displayQuote();
+  } catch(e){
+    throw Error(e);
+  }
 }
-
-button.addEventListener('click', showQuote);
+ 
+fetchQuotes();
