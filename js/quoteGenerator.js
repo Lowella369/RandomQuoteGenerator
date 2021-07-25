@@ -30,3 +30,4 @@ async function fetchQuotes() {
 }
  
 fetchQuotes();
+button.addEventListener('click', fetchQuotes);
